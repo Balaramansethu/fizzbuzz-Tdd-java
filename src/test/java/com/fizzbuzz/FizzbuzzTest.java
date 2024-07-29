@@ -2,8 +2,9 @@ package com.fizzbuzz;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class FizzbuzzTest
 {
@@ -19,10 +20,8 @@ public class FizzbuzzTest
     {
         //Arrange
         int three = 3;
-        //Act
-        String actualOutput = fizzbuzz.fizz(three);
         //Assert
-        assertEquals("fizz",actualOutput);
+        assertThat(fizzbuzz.fizz(three), is(equalTo("fizz")));
     }
 
 // five and its multiples are buzz
@@ -31,11 +30,8 @@ public class FizzbuzzTest
     {
         //Arrange
         int five= 5;
-        //Act
-        String actualOutput = fizzbuzz.buzz(five);
         //Assert
-        assertEquals("buzz",actualOutput);
-
+        assertThat(fizzbuzz.buzz(five), is(equalTo("buzz")));
     }
 // three and five multiples are fizzbuzz
     @Test
@@ -43,9 +39,7 @@ public class FizzbuzzTest
     {
         //Arrange
         int input = 15;
-        //Act
-        String actualOutput = fizzbuzz.fizzbuzzInput(input);
         //Assert
-        assertEquals("fizzbuzz",actualOutput);
+        assertThat(fizzbuzz.fizzbuzzInput(input), is(equalTo("fizzbuzz")));
     }
 }

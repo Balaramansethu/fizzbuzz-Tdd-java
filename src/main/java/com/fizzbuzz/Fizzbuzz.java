@@ -28,6 +28,7 @@ public class Fizzbuzz
         return String.valueOf(input);
     }
 
+    // For fizzbuzz functionality
     public String fizzbuzzInput(int input)
     {
         if(input % 3 == 0 && input % 5 == 0)
